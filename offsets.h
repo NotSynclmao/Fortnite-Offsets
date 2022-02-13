@@ -19,10 +19,31 @@ namespace S5_6 //UE 4.21
 	#define GetFirstPlayerController ("83 B9 ? ? ? ? ? 7E ? 48 8B 89 ? ? ? ? E9");
 #define SpawnActorFromClass ("40 53 56 57 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? 0F 28 1D ? ? ? ? 0F 57 D2 48 8B B4 24 ? ? ? ? 0F 28 CB");
 	#define ConstructObject ("48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 44 8B A5 ? ? ? ? 48 8D 05 ? ? ? ?");
-#define LoadObject ("4C 89 4C 24 ? 48 89 54 24 ? 48 89 4C 24 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC 78 45 33 F6");
+#define LoadObject ("4C 89 4C 24 ? 48 89 54 24 ? 48 89 4C 24 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC 78 45 33 F6"); // 0x5A14070
 	#define Free ("48 85 C9 74 2E 53 48 83 EC 20 48 8B D9");
 }
+ 
+namespace S7 // Season 7 (Tested 7.3 and 7.4)
+{
+#define UE_4_22_GOBJECTS _("48 8B 05 ? ? ? ? 48 8B 0C C8 48 8D 04 D1 EB 03 48 8B ? 81 48 08 ? ? ? 40 49")
+#define UE_4_22_FNAME_TOSTRING _("48 89 5C 24 ? 57 48 83 EC 30 83 79 04 00 48 8B DA 48 8B F9")
+#define UE_4_22_GETFIRSTPLAYERCONTROLLER _("83 B9 ? ? ? ? ? 7E ? 48 8B 89 ? ? ? ? E9")
+#define UE_4_22_SPAWNACTORFROMCLASS _("40 53 56 57 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? 0F 28 1D ? ? ? ? 0F 57 D2 48 8B B4 24 ? ? ? ? 0F 28 CB")
+#define UE_4_22_CONSTRUCTOBJECT _("48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 44 8B A5 ? ? ? ? 48 8D 05 ? ? ? ?")
+#define UE_4_22_LOADOBJECT _("4C 89 4C 24 ? 48 89 54 24 ? 48 89 4C 24 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC 78 45 33 F6")
+#define UE_4_22_FREE _("48 85 C9 74 2E 53 48 83 EC 20 48 8B D9")
+}
 
+namespace S8 // 8.51
+{
+#define UE_4_23_GOBJECTS _("48 8B 05 ? ? ? ? 48 8B 0C C8 48 8D 04 D1 EB 03 48 8B ? 81 48 08 ? ? ? 40 49")
+#define UE_4_23_FNAME_TOSTRING _("48 89 5C 24 ? 57 48 83 EC 30 83 79 04 00 48 8B DA 48 8B F9")
+#define UE_4_23_GETFIRSTPLAYERCONTROLLER _("83 B9 ? ? ? ? ? 7E ? 48 8B 89 ? ? ? ? E9")
+#define UE_4_23_SPAWNACTORFROMCLASS _("40 53 56 57 48 83 EC 70 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? 0F 28 1D ? ? ? ? 0F 57 D2 48 8B B4 24 ? ? ? ? 0F 28 CB")
+#define UE_4_23_CONSTRUCTOBJECT _("48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 44 8B A5 ? ? ? ? 48 8D 05 ? ? ? ?")
+#define UE_4_23_LOADOBJECT _("4C 89 4C 24 ? 48 89 54 24 ? 48 89 4C 24 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 8B EC 48 83 EC 78 45 33 F6")
+#define UE_4_23_FREE _("48 85 C9 74 2E 53 48 83 EC 20 48 8B D9")
+}
 
 namespace CL9380822//Season X
 {
@@ -97,10 +118,40 @@ namespace C3 //have no idea if these are correct or not
 
 namespace UnknownOffsets // I have no idea what version these go to....
 {
-
 #define ProcessEventAddress "\x40\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x81\xEC\x00\x00\x00\x00\x48\x8D\x6C\x24\x00\x48\x89\x9D\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC5\x48\x89\x85\x00\x00\x00\x00\x48\x63\x41\x0C", "xxxxxxxxxxxxxxx????xxxx?xxx????xxx????xxxxxx????xxxx";//if im correct this is Season 1?
 #define GEngine "\x48\x89\x74\x24\x20\xE8\x00\x00\x00\x00\x48\x8B\x4C\x24\x40\x48\x89\x05xxxxxx????xxxxxxxx";
 #define SCOI "\x4C\x89\x44\x24\x18\x55\x53\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\xAC\x24\x00\x00\x00\x00\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4xxxxxxxxxxxxxxxxxxxxx????xxx????xxx????xxx";
 }
+
+
+namespace S6_10
+{
+//LoadObject : [7FF64D8587D0] (0x5A14070)
+//Construct Object : [7FF64D856830] (0x1B36830)
+//SpawnActorFromClass : [7FF64E65E960] (0x293E960)
+//GetFirstPlayerController : [7FF64E9DC290] (0x2CBC290)
+//FName_ToString : [7FF64D6B2360] (0x1992360)
+//GObjects : [7FF64C8A97CF] (0xB897CF)
+}
+
+
+namespace S5_10
+{
+//GObjects - 0x376281->most likely completly wrong.
+//FName_ToString - 0x15FFD50
+//GetFirstPlayerController - 0x27E61E0
+//SpawnActorFromClass - 0x24A3500
+//ConstructObject - 0x17C3160
+//LoadObject - 0x17C5A30
+//Free - 0x152E830
+}
+
+
+
+
+
+
+
+
 
 
